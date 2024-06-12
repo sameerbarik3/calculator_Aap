@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -8,73 +9,119 @@
         android:layout_height="match_parent"
         android:paddingTop="?attr/actionBarSize">
 
+
+        <!--<TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Simple Calculator"
+            android:textAlignment="center"
+            android:textSize="45sp"
+            android:textStyle="bold|italic"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="125dp" />-->
+
+
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
         android:text="Simple Calculator"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="45sp"
+        />
 
     <EditText
             android:id="@+id/number1"
-            android:hint="Enter number"
-            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="25dp"
+            android:hint="Enter number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/number2" />
 
-        <EditText
-            android:id="@+id/number2"
-            android:hint="Enter number"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <LinearLayout
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btn_add"
-            android:text="+"
-            android:textSize="30sp"
-            android:layout_marginEnd="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/number2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="25dp"
+        android:hint="Enter number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="+"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.219"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number1" />
 
     <Button
         android:id="@+id/btn_sub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="5sp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
         android:text="-"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.219"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_add"
+        tools:ignore="UnknownId" />
 
     <Button
         android:id="@+id/btn_mul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="5sp"
+        android:layout_marginTop="20dp"
         android:text="*"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.219"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_sub" />
 
     <Button
         android:id="@+id/btn_div"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
+        android:layout_marginTop="20dp"
         android:text="/"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.219"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_mul" />
 
     <TextView
         android:id="@+id/answer"
         android:layout_width="61dp"
         android:layout_height="67dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
         android:text="@string/answer"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_div"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_mul"
+        app:layout_constraintTop_toBottomOf="@+id/btn_add" />
 
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
